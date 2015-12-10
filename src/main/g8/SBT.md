@@ -1,8 +1,4 @@
-# $name$
-
-$description$
-
-This project is built using [SBT](http://www.scala-sbt.org/). To create the distribution, run `sbt pack`
+# SBT - Simple Build Tool
 
 ## Useful [SBT commands](http://www.scala-sbt.org/release/docs/Command-Line-Reference.html) for this project
 
@@ -33,12 +29,3 @@ _ `scalastyleGenerateConfig`: Generates a scalastyle config file. Run before usi
 - `test` or `~test` (continuous)
 - `update-classifiers`: Download sources and javadoc for all dependencies
 - `version-report`: Shows a flat listing of all dependencies in this project, including transitive ones.
-
-## To run main class using SBT to launch it
-`sbt 'run-main org.mbari.foo.Main'`
-
-## To run a single test
-`sbt 'test-only org.mbari.foo.ExampleSpec'`
-
-## References 
-[SBT Pack](https://github.com/xerial/sbt-pack) - Files added in `src/pack` are included in product
