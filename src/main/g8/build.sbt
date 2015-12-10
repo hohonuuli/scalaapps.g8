@@ -11,17 +11,17 @@ scalaVersion in ThisBuild := "$scala_version$"
 
 // https://tpolecat.github.io/2014/04/11/scalac-flags.html
 scalacOptions in ThisBuild ++= Seq(
-  "-deprecation",           
+  "-deprecation",
   "-encoding", "UTF-8",       // yes, this is 2 args
-  "-feature",                
+  "-feature",
   "-language:existentials",
   "-language:higherKinds",
   "-language:implicitConversions",
   "-unchecked",
-  "-Xfatal-warnings",       
+  "-Xfatal-warnings",
   "-Xlint",
-  "-Yno-adapted-args",       
-  "-Ywarn-numeric-widen",   
+  "-Yno-adapted-args",
+  "-Ywarn-numeric-widen",
   "-Ywarn-value-discard",
   "-Xfuture")
 
@@ -31,7 +31,7 @@ incOptions := incOptions.value.withNameHashing(true)
 
 // DEPENDENCIES ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-updateOptions := updateOptions.value.withCachedResolution(true) 
+updateOptions := updateOptions.value.withCachedResolution(true)
 
 // Add SLF4J, Logback and testing libs
 libraryDependencies ++= {
@@ -61,9 +61,9 @@ net.virtualvoid.sbt.graph.Plugin.graphSettings
 
 // -- PROMPT
 // set the prompt (for this build) to include the project id.
-shellPrompt in ThisBuild := { state => 
+shellPrompt in ThisBuild := { state =>
   val user = System.getProperty("user.name")
-  "\n" + user + "@" + Project.extract(state).currentRef.project + "\nsbt> " 
+  "\n" + user + "@" + Project.extract(state).currentRef.project + "\nsbt> "
 }
 
 
@@ -112,7 +112,7 @@ packAutoSettings
 // For sbt-pack
 val apps = Seq("main")
 
-packAutoSettings ++ Seq(packExtraClasspath := apps.map(_ -> Seq("${PROG_HOME}/conf")).toMap,
+packAutoSettings ++ Seq(packExtraClasspath := apps.map(_ -> Seq("${PROG_HOME}\/conf")).toMap,
   packJvmOpts := apps.map(_ -> Seq("-Duser.timezone=UTC", "-Xmx4g")).toMap,
   packDuplicateJarStrategy := "latest",
   packJarNameConvention := "original")
@@ -128,7 +128,7 @@ ScalariformKeys.preferences := ScalariformKeys.preferences.value
   .setPreference(IndentSpaces, 2)
   .setPreference(PlaceScaladocAsterisksBeneathSecondAsterisk, false)
   .setPreference(DoubleIndentClassDeclaration, true)
-  
+
 // Fail if style is bad
 scalastyleFailOnError := true
 
@@ -144,4 +144,3 @@ initialCommands in console :=
   """
     |import java.util.Date
   """.stripMargin
-
