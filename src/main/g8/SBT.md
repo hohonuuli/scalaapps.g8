@@ -8,6 +8,8 @@
 - `compile` or `~compile` (continuous)
 - `console`: Opens a scala console that includes the projects dependencies and code on the classpath
 - `dependency-tree`: Shows an ASCII dependency graph
+- `dependencyList`: Prints a flat, deduplicated list of all the transitive dependencies.
+- `dependencyStats`: Prints a simple table of jar sizes for all your dependencies. Handy if you want to know why your assembled jar gets so big.
 - `dependencyUpdates`: Show dependency updates
 - `doc`: Generate Scaladoc into target/api
 - `export fullClasspath`: Generate the classpath needed to run the project
@@ -27,5 +29,6 @@ _ `scalastyleGenerateConfig`: Generates a scalastyle config file. Run before usi
 - `show update`: Show dependencies and indicate which were evicted
 - `tasks -V`: Shows all available tasks/commands
 - `test` or `~test` (continuous)
+- `todos`: Display a listing of all TODO, FIXME, WIP, or XXX comments
 - `update-classifiers`: Download sources and javadoc for all dependencies
 - `version-report`: Shows a flat listing of all dependencies in this project, including transitive ones.

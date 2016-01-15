@@ -55,9 +55,6 @@ resolvers in ThisBuild ++= Seq(Resolver.mavenLocal,
 //publishTo := Some(Resolver.file("file",  new File(Path.userHome.absolutePath+"/.m2/repository")))
 
 // OTHER SETTINGS ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-// Adds commands for dependency reporting
-net.virtualvoid.sbt.graph.Plugin.graphSettings
-
 
 // -- PROMPT
 // set the prompt (for this build) to include the project id.
@@ -121,10 +118,11 @@ packAutoSettings ++ Seq(packExtraClasspath := apps.map(_ -> Seq("\${PROG_HOME}/c
 // -- SCALARIFORM
 // Format code on save with scalariform
 import scalariform.formatter.preferences._
+import com.typesafe.sbt.SbtScalariform
 
-scalariformSettings
+SbtScalariform.scalariformSettings
 
-ScalariformKeys.preferences := ScalariformKeys.preferences.value
+SbtScalariform.ScalariformKeys.preferences := SbtScalariform.ScalariformKeys.preferences.value
   .setPreference(IndentSpaces, 2)
   .setPreference(PlaceScaladocAsterisksBeneathSecondAsterisk, false)
   .setPreference(DoubleIndentClassDeclaration, true)
@@ -132,6 +130,9 @@ ScalariformKeys.preferences := ScalariformKeys.preferences.value
 // Fail if style is bad
 scalastyleFailOnError := true
 
+// -- TODOS
+// default tags are TODO, FIXME, WIP and XXX. I want the following instead
+todosTags := Set("TODO", "FIXME", "WTF\\?")
 
 // -- MISC
 // fork a new JVM for run and test:run
