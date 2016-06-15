@@ -35,14 +35,14 @@ updateOptions := updateOptions.value.withCachedResolution(true)
 
 // Add SLF4J, Logback and testing libs
 libraryDependencies ++= {
-  val slf4jVersion = "1.7.13"
-  val logbackVersion = "1.1.3"
+  val slf4jVersion = "1.7.21"
+  val logbackVersion = "1.1.7"
   Seq(
     "ch.qos.logback" % "logback-classic" % logbackVersion,
     "ch.qos.logback" % "logback-core" % logbackVersion,
     "com.typesafe" % "config" % "1.3.0",
     "junit" % "junit" % "4.12" % "test",
-    "org.scalatest" %% "scalatest" % "2.2.4" % "test",
+    "org.scalatest" %% "scalatest" % "2.2.6" % "test",
     "org.slf4j" % "log4j-over-slf4j" % slf4jVersion,
     "org.slf4j" % "slf4j-api" % slf4jVersion)
 }
@@ -60,7 +60,7 @@ resolvers in ThisBuild ++= Seq(Resolver.mavenLocal,
 // set the prompt (for this build) to include the project id.
 shellPrompt in ThisBuild := { state =>
   val user = System.getProperty("user.name")
-  "\n" + user + "@" + Project.extract(state).currentRef.project + "\nsbt> "
+  user + "@" + Project.extract(state).currentRef.project + ":sbt> "
 }
 
 

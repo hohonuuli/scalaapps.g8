@@ -29,6 +29,7 @@ _ `scalastyleGenerateConfig`: Generates a scalastyle config file. Run before usi
 - `show update`: Show dependencies and indicate which were evicted
 - `tasks -V`: Shows all available tasks/commands
 - `test` or `~test` (continuous)
+- `~testQuick`: Incrementally compile modified code and only runtest clases that were affected by the change.
 - `todos`: Display a listing of all TODO, FIXME, WIP, or XXX comments
 - `update-classifiers`: Download sources and javadoc for all dependencies
 - `version-report`: Shows a flat listing of all dependencies in this project, including transitive ones.
